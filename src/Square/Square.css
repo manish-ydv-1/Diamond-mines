@@ -1,0 +1,51 @@
+/* Base styles for the square item */
+.square-item {
+    width: 100px;
+    height: 100px;
+    background: rgba(176, 43, 254, 0.386); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply blur to the background */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 10px; /* Rounded corners for smooth edges */
+    padding: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for the transform */
+  }
+  
+  .square-item:hover {
+    transform: translateY(-5px); /* Moves the item up 5px on hover */
+    cursor: pointer;
+  }
+  
+  .square-item img {
+    border-radius: 8px; /* Make the image edges slightly rounded */
+  }
+  
+  /* Boom Animation */
+  @keyframes boomAnimation {
+    0% {
+      transform: scale(1); /* Initial size */
+      opacity: 1; /* Full opacity */
+    }
+    50% {
+      transform: scale(1.5); /* Explosive growth */
+      opacity: 0.7; /* Slightly faded */
+    }
+    60% {
+      transform: scale(0.5); /* Shrink dramatically */
+      opacity: 0.5; /* More faded */
+    }
+    80% {
+      transform: scale(1.2); /* Slightly larger again */
+      opacity: 0.8; /* Fade in */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+      opacity: 1; /* Full opacity */
+    }
+  }
+  
+  /* Add the 'boom' class for explosion effect */
+  .boom {
+    animation: boomAnimation 0.8s ease-out; /* Boom animation lasts 0.8 seconds */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.6); /* Adding a fiery glow to simulate explosion */
+  }
+  
